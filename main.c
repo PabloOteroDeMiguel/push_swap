@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/10 13:43:32 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:05:23 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,38 @@ int main(int argc, char **argv)
 	char	**str;
 	int		i;
 	int		a;
-	char	*s= "hola";
-	t_list	**colum_a = NULL;
+	int		num;
+	t_column	**column_a = NULL;
+//	t_column	*aux;
 
-	colum_a = malloc(sizeof(t_list));
 	a = 1;
 	i = 0;
-	*colum_a = ft_lstnew(&s);
-	ft_printf("%s\n", colum_a);
+	column_a = malloc(sizeof(t_list));
 	while (a < argc)
 	{
-		str = ft_split(argv[a], ' ');
-		{
-/*			while(str[i])
+		str = ft_split(argv[a], ' ');	
+		while (str[i])
+		{	
+			if (ps_check_arg(str[i]) == 1)
 			{
-				ft_lstadd_back(colum_a, ft_atoi(str[i]));
-				i++;
-			}*/
+				num = ft_atoi(str[i]);
+				ps_lst_add_back(column_a, ps_lstnew(num));
+			}
+			else
+			{
+				ps_error(1);
+				return (0);
+			}
+			i++;
+		}
 		a++;
 		i = 0;
-		}
 	}
-/*	while (str[i])
+	ps_print_column(*column_a);
+/*	aux = *column_a;
+	while (aux)
 	{
-		ft_putstr_fd(str[i], 1);
-		i++;
-		write(1, "\n", 1);
+		ft_printf("%d\n", aux->num);
+		aux = aux->next;
 	}*/
-
 }	
-

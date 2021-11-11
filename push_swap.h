@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/10 13:43:19 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:06:26 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,21 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-/*typedef struct s1_list
+typedef struct s_column
 {
 	int				num;
-	struct s1_list	*next;
-}	t1_list;*/
+	struct s_column	*next;
+}	t_column;
 
 int	main(int argc, char **argv);
 int	ft_string(char *a);
 int	ft_isdigit(int c);
+t_column	*ps_lstnew(int  num);
+int			ps_lstsize(t_column *column);
+t_column	*ps_lstlast(t_column *lst);
+void		ps_lst_add_back(t_column **column, t_column *new);
+void		ps_error(int a);
+int			ps_check_arg(char   *str);
+void		ps_print_column(t_column *column);
 
 #endif
