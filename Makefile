@@ -6,11 +6,11 @@
 #    By: potero <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/11 15:42:33 by potero            #+#    #+#              #
-#    Updated: 2021/11/11 16:05:57 by potero           ###   ########.fr        #
+#    Updated: 2021/11/11 16:35:38 by potero           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c ft_string.c ft_isdigit.c ps_lst.c ps_error.c ps_check_arg.c \
+SRCS = main.c ps_lst.c ps_error.c ps_check_arg.c \
 		ps_print_column.c 
 
 LIBFT_PATH = libft/

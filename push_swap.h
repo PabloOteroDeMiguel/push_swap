@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/11 16:06:26 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/11 16:35:51 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ typedef struct s_column
 }	t_column;
 
 int	main(int argc, char **argv);
-int	ft_string(char *a);
-int	ft_isdigit(int c);
 t_column	*ps_lstnew(int  num);
 int			ps_lstsize(t_column *column);
 t_column	*ps_lstlast(t_column *lst);
