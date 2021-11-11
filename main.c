@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/11 16:05:23 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/11 17:20:03 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main(int argc, char **argv)
 	int		a;
 	int		num;
 	t_column	**column_a = NULL;
-//	t_column	*aux;
 
 	a = 1;
 	i = 0;
@@ -43,12 +42,9 @@ int main(int argc, char **argv)
 		}
 		a++;
 		i = 0;
-	}
-	ps_print_column(*column_a);
-/*	aux = *column_a;
-	while (aux)
-	{
-		ft_printf("%d\n", aux->num);
-		aux = aux->next;
-	}*/
+	}	
+	if (ps_repeat(*column_a) == 1)
+		ps_error(1);
+	else
+		ps_print_column(*column_a);
 }	
