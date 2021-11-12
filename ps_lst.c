@@ -6,13 +6,13 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:31:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/11 12:57:41 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/12 13:45:51 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_column	*ps_lstnew(int	num)
+t_column	*ps_lstnew(long int	num)
 {
 	t_column	*element;
 	
@@ -30,6 +30,8 @@ int	ps_lstsize(t_column *column)
 	t_column	*aux;
 
 	i = 0;
+	if (!column)
+		return (0);
 	aux = column;
 	while (aux)
 	{
@@ -41,19 +43,19 @@ int	ps_lstsize(t_column *column)
 
 t_column	*ps_lstlast(t_column *lst)
 {
-	int	i;
 	int	j;
+	t_column	*aux;
 
+	aux = lst;
 	if(!lst)
 		return (0);
-	i = ps_lstsize(lst);
 	j = 0;
-	while (j < i -1)
+	while (aux->next != 0)
 	{
-		lst = lst->next;
+		aux = aux->next;
 		j++;
 	}
-	return (lst);
+	return (aux);
 }
 
 void	ps_lst_add_back(t_column **column, t_column *new)
@@ -65,8 +67,7 @@ void	ps_lst_add_back(t_column **column, t_column *new)
 		*column = new;
 		return	;
 	}
-	aux = *column;
-	aux = ps_lstlast(aux);
+	aux = ps_lstlast(*column);
 	aux->next = new;
 }
 

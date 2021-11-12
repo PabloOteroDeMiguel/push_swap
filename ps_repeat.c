@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:49:10 by potero            #+#    #+#             */
-/*   Updated: 2021/11/11 17:19:06 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/12 13:28:36 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ps_repeat(t_column *column)
 	aux = column;
 	while (aux)
 	{
+		if (aux->num == -2147483648)
+			return (1);
 		aux2 = aux->next;
 		while (aux2)
 		{

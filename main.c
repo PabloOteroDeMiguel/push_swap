@@ -6,23 +6,25 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/11 17:20:03 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/12 13:50:23 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include<stdio.h>
 
 int main(int argc, char **argv)
 {	
 	char	**str;
 	int		i;
 	int		a;
-	int		num;
+	long int		num;
 	t_column	**column_a = NULL;
 
 	a = 1;
 	i = 0;
 	column_a = malloc(sizeof(t_list));
+	*column_a = 0;
 	while (a < argc)
 	{
 		str = ft_split(argv[a], ' ');	
@@ -30,7 +32,9 @@ int main(int argc, char **argv)
 		{	
 			if (ps_check_arg(str[i]) == 1)
 			{
-				num = ft_atoi(str[i]);
+				num = ps_atoi(str[i]);
+				printf("num: %li\n", num);
+				ft_printf("fnum: %i\n", num);
 				ps_lst_add_back(column_a, ps_lstnew(num));
 			}
 			else
