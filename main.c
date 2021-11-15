@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/12 13:50:23 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/15 10:09:52 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int main(int argc, char **argv)
 			if (ps_check_arg(str[i]) == 1)
 			{
 				num = ps_atoi(str[i]);
-				printf("num: %li\n", num);
-				ft_printf("fnum: %i\n", num);
 				ps_lst_add_back(column_a, ps_lstnew(num));
 			}
 			else
