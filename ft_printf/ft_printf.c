@@ -6,7 +6,7 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 09:39:56 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/02 11:12:10 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:12:13 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_character(char c, va_list ap, int *cont)
 	{
 		write(1, "0x", 2);
 		*cont += ft_putnbr_base_n((unsigned long long)va_arg(ap, void *),
-				 "0123456789abcdef") + 2;
+				"0123456789abcdef") + 2;
 	}
 	else if (c == 'd' || c == 'i')
 		*cont += ft_putnbr_base_p(va_arg(ap, int), "0123456789", 1);

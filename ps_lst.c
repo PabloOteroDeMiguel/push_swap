@@ -6,16 +6,16 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:31:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/12 13:45:51 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:13:30 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_column	*ps_lstnew(long int	num)
+t_column	*ps_lstnew(long int num)
 {
 	t_column	*element;
-	
+
 	element = malloc(sizeof(t_column));
 	if (!element)
 		return (NULL);
@@ -43,11 +43,11 @@ int	ps_lstsize(t_column *column)
 
 t_column	*ps_lstlast(t_column *lst)
 {
-	int	j;
+	int			j;
 	t_column	*aux;
 
 	aux = lst;
-	if(!lst)
+	if (!lst)
 		return (0);
 	j = 0;
 	while (aux->next != 0)
@@ -65,9 +65,8 @@ void	ps_lst_add_back(t_column **column, t_column *new)
 	if (!*column)
 	{
 		*column = new;
-		return	;
+		return ;
 	}
 	aux = ps_lstlast(*column);
 	aux->next = new;
 }
-

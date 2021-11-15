@@ -6,12 +6,12 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/15 16:57:33 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/15 17:13:59 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include<unistd.h>
 # include "libft.h"
@@ -33,6 +33,5 @@ int			ps_check_arg(char *str);
 void		ps_print_column(t_column *column_a, t_column *column_b);
 int			ps_repeat(t_column *column);
 long int	ps_atoi(const char *str);
-
 
 #endif
