@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/15 10:09:52 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/15 17:01:02 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 
 int main(int argc, char **argv)
 {	
-	char	**str;
-	int		i;
-	int		a;
-	long int		num;
+	char		**str;
+	int			i;
+	int			a;
+	long int	num;
 	t_column	**column_a = NULL;
+	t_column	**column_b = NULL;
 
 	a = 1;
 	i = 0;
 	column_a = malloc(sizeof(t_list));
+	column_b = malloc(sizeof(t_list));
 	*column_a = 0;
+	*column_b = 0;
 	while (a < argc)
 	{
 		str = ft_split(argv[a], ' ');	
@@ -48,5 +51,5 @@ int main(int argc, char **argv)
 	if (ps_repeat(*column_a) == 1)
 		ps_error(1);
 	else
-		ps_print_column(*column_a);
+		ps_print_column(*column_a, *column_b);
 }	
