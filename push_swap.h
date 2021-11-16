@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/16 10:20:31 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/16 11:56:53 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ void		ps_print_column(t_column *column_a, t_column *column_b);
 int			ps_repeat(t_column *column);
 long int	ps_atoi(const char *str);
 void		ps_add_front(t_column **column, t_column *new);
-void 		ps_del_one(t_column *column, void (*del)(void*));
-void		ps_swap(t_column **column, char  c);
+void		ps_del_one(t_column *column, void (*del)(void*));
+void		ps_swap(t_column **column, char c);
 void		ps_ss(t_column **column_a, t_column **column_b);
+void		ps_push(t_column **column_a, t_column **column_b, char c);
 
 #endif

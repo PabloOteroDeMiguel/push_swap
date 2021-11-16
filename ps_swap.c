@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:15:15 by potero            #+#    #+#             */
-/*   Updated: 2021/11/16 10:46:11 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/16 11:55:38 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ps_swap(t_column **column, char	c)
 {
 	t_column	*aux;
 	t_column	*aux2;
-	
+
 	if (ps_lstsize(*column) > 1)
 	{
 		aux = *column;

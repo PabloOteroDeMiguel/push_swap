@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_check_arg.c                                     :+:      :+:    :+:   */
+/*   ps_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 15:34:11 by potero            #+#    #+#             */
-/*   Updated: 2021/11/16 11:54:31 by potero-d         ###   ########.fr       */
+/*   Created: 2021/11/16 11:29:06 by potero-d          #+#    #+#             */
+/*   Updated: 2021/11/16 11:54:07 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ps_check_arg(char	*str)
+void	ps_push(t_column **column_1, t_column **column_2, char c)
 {
-	int	i;
+	t_column	*aux;
 
-	i = 0;
-	if ((str[i] == '-' || str[i] == '+') && (ft_strlen(str) > 1))
-		i++;
-	while (str[i] != '\0')
+	if (column_1)
 	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
+		aux = *column_1;
+		*column_1 = (*column_1)->next;
+		ps_add_front(&*column_2, aux);
+		if (c == 'a' || c == 'b')
+			ft_printf("p%c\n", c);
 	}
-	return (1);
-}
+}	
