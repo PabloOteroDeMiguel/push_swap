@@ -38,5 +38,9 @@ void		ps_del_one(t_column *column, void (*del)(void*));
 void		ps_swap(t_column **column, char c);
 void		ps_ss(t_column **column_a, t_column **column_b);
 void		ps_push(t_column **column_a, t_column **column_b, char c);
+void		ps_rotate(t_column **column, char c);
+void		ps_rr(t_column **column_1, t_column **column_2);
+void		ps_reverse_r(t_column **column, char c);
+void		ps_rrr(t_column **column_1, t_column **column_2);
 
 #endif

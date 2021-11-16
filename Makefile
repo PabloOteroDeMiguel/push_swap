@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 SRCS = main.c ps_lst.c ps_error.c ps_check_arg.c \
-	   ps_print_column.c ps_repeat.c ps_atoi.c ps_lst_second.c \
-	   ps_swap.c ps_push.c
+	   ps_print_column.c ps_repeat.c ps_atoi.c \
+	   ps_swap.c ps_push.c ps_rotate.c
 
 LIBFT_PATH = libft/
 FT_PRINTF_PATH = ft_printf/
