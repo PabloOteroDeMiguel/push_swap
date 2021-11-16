@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/16 13:34:17 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:44:16 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 	i = 0;
 	column_a = malloc(sizeof(t_list));
 	column_b = malloc(sizeof(t_list));
+
 	*column_a = 0;
 	*column_b = 0;
 	while (a < argc)

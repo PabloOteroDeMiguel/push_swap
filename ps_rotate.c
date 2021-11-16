@@ -6,7 +6,7 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:59:29 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/16 13:34:46 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:44:13 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	ps_reverse_r(t_column **column, char c)
 		aux2 = aux->next;
 		while (aux2->next != 0)
 		{
-			aux = aux2->next;
-			aux2 = aux->next;
+			aux2 = aux2->next;
+			aux = aux->next;
 		}
 		aux->next = NULL;
 	}
