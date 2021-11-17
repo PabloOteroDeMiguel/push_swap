@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_order.c                                         :+:      :+:    :+:   */
+/*   ps_position.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 09:37:28 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/17 16:50:11 by potero           ###   ########.fr       */
+/*   Created: 2021/11/17 17:05:01 by potero            #+#    #+#             */
+/*   Updated: 2021/11/17 17:31:52 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include<stdio.h>
 
-int	ps_order(t_column **column)
+void	ps_position(t_column *column)
 {
 	t_column	*aux;
-//	t_column	*aux2;
+	int			p;
 
-	aux = *column;
-//	aux2 = (*column)->next;
-	while (aux->next != 0)
+	aux = column;
+	p = 1;
+	while (aux)
 	{
-	//	printf("%li >> %li\n", aux->num, (aux->next)->num);
-	//	printf("%li >> %li\n", aux->num, aux2->num);
-		if (aux->num > (aux->next)->num)
-			return (0);
+		aux->pos = p;
 		aux = aux->next;
+		p++;
 	}
-	return (1);
-}
+}	

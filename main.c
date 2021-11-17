@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/17 11:07:47 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:31:02 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,42 +52,48 @@ int main(int argc, char **argv)
 	}	
 	if (ps_repeat(*column_a) == 1)
 		ps_error(1);
+//	ps_limits(*column_a);
+//	ps_step_one(*column_a, *column_b);
+//	ps_print_column(*column_a, *column_b);
 	else
 		ps_print_column(*column_a, *column_b);
 /*	if (ps_order(&*column_a) == 1)
-		ft_printf("La columna está ordenada\n");
+		ft_printf("The column is neat!\n");
 	else
-		ft_printf("La columna NO está ordenada\n");*/
-/*	ps_limits(*column_a);
-	aux = *column_a;
-	ft_printf("max y min\n");
+		ft_printf("The column is NOT neat!\n");
+	ps_limits(*column_a);*/
+/*	aux = *column_a;
 	while (aux)
 	{
 		if (aux->max == 1)
-			ft_printf("El máximo es %i\n", aux->num);
+			ft_printf("The maximum is %i\n", aux->num);
 		else if (aux->min == 1)
-			ft_printf("El mínimo es %i\n", aux->num);
+			ft_printf("The minimum is %i\n", aux->num);
 		aux = aux->next;
 	}*/
-	ps_swap(&*column_a, 'a');
-	ps_print_column(*column_a, *column_b);
+/*	ps_swap(&*column_a, 'a');
+//	ps_print_column(*column_a, *column_b);
 	ps_ss(&*column_a, &*column_b);
-	ps_print_column(*column_a, *column_b);
+//	ps_print_column(*column_a, *column_b);
 	ps_push(&*column_a, &*column_b, 'b');
 	ps_push(&*column_a, &*column_b, 'b');
-	ps_print_column(*column_a, *column_b);
-	ps_push(&*column_b, &*column_a, 'a');
-	ps_print_column(*column_a, *column_b);
+//	ps_print_column(*column_a, *column_b);
+	ps_push(&*column_b, &*column_a, 'a');*/
+//	ps_print_column(*column_a, *column_b);
+
+/*	ps_rotate(&*column_a, 'a');
 	ps_rotate(&*column_a, 'a');
-	ps_print_column(*column_a, *column_b);
-	ps_rr(&*column_a, &*column_b );
-	ps_print_column(*column_a, *column_b);
+	ps_rotate(&*column_a, 'a');
+	ps_print_column(*column_a, *column_b);*/
+
+/*	ps_rr(&*column_a, &*column_b );
+//	ps_print_column(*column_a, *column_b);
 	ps_reverse_r(&*column_a, 'a');
-	ps_print_column(*column_a, *column_b);
+//	ps_print_column(*column_a, *column_b);
 	
 	ps_reverse_r(&*column_b, 'b');
-	ps_print_column(*column_a, *column_b);
+//	ps_print_column(*column_a, *column_b);
 	ps_rrr(&*column_a, &*column_b);
 	ps_print_column(*column_a, *column_b);
-	system("leaks pushswap");
+//	system("leaks pushswap");*/
 }	

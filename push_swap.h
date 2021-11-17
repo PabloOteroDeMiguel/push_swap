@@ -22,6 +22,7 @@ typedef struct s_column
 	long int		num;
 	int				max;
 	int				min;
+	int				pos;
 
 	struct s_column	*next;
 }	t_column;
@@ -47,5 +48,7 @@ void		ps_reverse_r(t_column **column, char c);
 void		ps_rrr(t_column **column_1, t_column **column_2);
 int			ps_order(t_column **column);
 void   		ps_limits(t_column *column);
+void		ps_position(t_column *column);
+void		ps_step_one(t_column **column_a, t_column **column_b);
 
 #endif
