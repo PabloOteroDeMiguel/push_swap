@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/18 14:07:39 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/18 17:03:05 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ int main(int argc, char **argv)
 	}
 	if (ps_repeat(column_a) == 1)
 		ps_error(1);
-	else
+/*	else
 		ps_print_column(column_a, column_b);
+*/
 	ps_step_one(column_a, column_b);
 //	ps_step_three(column_a, column_b);
 //	ps_print_column(column_a, column_b);

@@ -6,7 +6,7 @@
 #    By: potero <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/11 15:42:33 by potero            #+#    #+#              #
-#    Updated: 2021/11/16 10:46:55 by potero-d         ###   ########.fr        #
+#    Updated: 2021/11/18 17:54:28 by potero           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ FT_PRINTF_PATH = ft_printf/
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = pushswap
+NAME = push_swap
 
 CC = gcc
 
