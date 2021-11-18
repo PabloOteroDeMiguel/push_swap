@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:31:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/16 13:35:37 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/18 11:24:31 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	ps_lst_add_back(t_column **column, t_column *new)
 {
 	t_column	*aux;
 
-	if (!*column)
+	if (*column)
 	{
-		*column = new;
-		return ;
+		aux = ps_lstlast(*column);
+		aux->next = new;
 	}
-	aux = ps_lstlast(*column);
-	aux->next = new;
+	else
+		*column = new;
 }
 
 void	ps_add_front(t_column **column, t_column *new)

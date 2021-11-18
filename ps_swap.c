@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_operations.c                                    :+:      :+:    :+:   */
+/*   ps_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:15:15 by potero            #+#    #+#             */
-/*   Updated: 2021/11/16 11:55:38 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/18 12:44:31 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_swap(t_column **column, char	c)
+void	ps_swap(t_column **column, char c)
 {
 	t_column	*aux;
 	t_column	*aux2;
