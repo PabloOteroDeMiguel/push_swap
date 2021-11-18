@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/18 12:43:41 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/18 14:01:26 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void		ps_rrr(t_column **column_1, t_column **column_2);
 int			ps_order(t_column *column);
 void		ps_limits(t_column *column);
 void		ps_position(t_column *column);
-void		ps_step_one(t_column **column_a, t_column **column_b);
+void		ps_step_one(t_column *column_a, t_column *column_b);
+void		ps_step_two(t_column *column);
+void		 ps_step_three(t_column *column_a, t_column *column_b);
 
 #endif

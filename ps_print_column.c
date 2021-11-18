@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:01:33 by potero            #+#    #+#             */
-/*   Updated: 2021/11/18 11:11:54 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/18 13:15:49 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,21 @@ void	ps_print_column(t_column *column_a, t_column *column_b)
 	aux2 = column_b;
 	while (aux || aux2)
 	{
-		if (aux2)
+		if (aux && aux2)
 		{
 			ft_printf("%d            %d\n", aux->num, aux2->num);
 			aux = aux->next;
 			aux2 = aux2->next;
 		}
-		else
+		else if (aux && !aux2)
 		{
 			ft_printf("%d            .\n", aux->num);
 			aux = aux->next;
+		}
+		else if (!aux && aux2)
+		{
+			ft_printf(".            %d\n", aux2->num);
+			aux2 = aux2->next;
 		}
 	}
 	ft_printf("----------- -----------\na           b\n");
