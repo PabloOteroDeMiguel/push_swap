@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/18 17:03:05 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/20 12:22:58 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int main(int argc, char **argv)
 	i = 0;
 	column_a = malloc(sizeof(t_list));
 	column_b = malloc(sizeof(t_list));
+	printf("A-> %p\n", column_a);
+	printf("B-> %p\n", column_b);
 
 	column_a = 0;
 	column_b = 0;
@@ -50,7 +52,10 @@ int main(int argc, char **argv)
 				return (0);
 			}
 			i++;
+			free(str[i - 1]);
 		}
+	//	free(str[i]);
+		free(str);
 		a++;
 		i = 0;
 	}
@@ -59,9 +64,28 @@ int main(int argc, char **argv)
 /*	else
 		ps_print_column(column_a, column_b);
 */
-	ps_step_one(column_a, column_b);
+//	ps_step_one(column_a, column_b);
+
+//	ps_insertion_one(column_a, column_b);
+	while (ps_order(column_a) != 1)
+	{	
+		ps_par(&column_a, &column_b);
+	}
+	while (column_b)
+	{
+		ps_push(&column_b, &column_a, 'a');
+	}
+/*	ps_par(&column_a);
+	ps_print_column(column_a, column_b);
+	ps_par(&column_a);
+
+	ps_free(&column_a);
+	free(column_a);
+	ps_free(&column_b);
+	free(column_b);
+*/
 //	ps_step_three(column_a, column_b);
-//	ps_print_column(column_a, column_b);
+	ps_print_column(column_a, column_b);
 
 /*	if (ps_order(column_a) == 1)
 		ft_printf("The column is neat!\n");
@@ -93,17 +117,18 @@ int main(int argc, char **argv)
 */
 /*	ps_rotate(&column_a, 'a');
 	ps_rotate(&column_a, 'a');
-	ps_rotate(&column_b, 'b');
+//	ps_rotate(&column_b, 'b');
 	ps_print_column(column_a, column_b);
 */
 /*	ps_rr(&column_a, &column_b );
 	ps_print_column(column_a, column_b);
 	ps_reverse_r(&column_a, 'a');
 	ps_print_column(column_a, column_b);	
-	ps_reverse_r(&column_b, 'b');
+*/
+/*	ps_reverse_r(&column_b, 'b');
 	ps_print_column(column_a, column_b);
 	ps_rrr(&column_a, &column_b);
 	ps_print_column(column_a, column_b);
 */
-//	system("leaks pushswap");*/
+//	system("leaks push_swap");
 }	

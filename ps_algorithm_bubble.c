@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_algorithm.c                                     :+:      :+:    :+:   */
+/*   ps_algorithm_bubble.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:00:01 by potero            #+#    #+#             */
-/*   Updated: 2021/11/18 17:02:23 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/19 11:19:48 by potero           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ps_step_one(t_column *column_a, t_column *column_b)
 	i = 0;
 	numbers = ps_lstsize(column_a);
 //	ft_printf("numbers-> %i\n", numbers);
-	if (numbers > 2)
+	if (numbers > 2 && (ps_order(column_a) != 1))
 	{
 		aux = column_a;
 		aux2 = column_b;
@@ -33,7 +33,7 @@ void	ps_step_one(t_column *column_a, t_column *column_b)
 		while (aux->min != 1)
 			aux = aux->next;
 //	ft_printf("pos %i\n", aux->pos);
-		if (aux->pos <= (numbers / 2))
+		if (aux->pos <= (numbers / 2) + 1)
 		{
 			while (i <  aux->pos - 1)
 			{
@@ -42,7 +42,7 @@ void	ps_step_one(t_column *column_a, t_column *column_b)
 			}
 			ps_push(&column_a, &column_b, 'b');
 		}
-		else if (aux->pos > (numbers / 2))
+		else if (aux->pos > (numbers / 2) + 1)
 		{
 			while (i < (numbers - aux->pos + 1))
 			{
