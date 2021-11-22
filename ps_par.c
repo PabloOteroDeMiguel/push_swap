@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 11:42:05 by potero            #+#    #+#             */
-/*   Updated: 2021/11/20 12:33:31 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/22 11:21:17 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,34 @@
 
 void	ps_par(t_column **column_a, t_column **column_b)
 {
+	t_column	*aux;
 	ps_limits(*column_a);
-	if (ps_order(*column_a) == 1)
-		return ;
-	else if (ps_order(*column_a) != 1)
-	{
-		if ((*column_a)->min == 1)
-			ps_push(column_a, column_b, 'b');
-		else if ((*column_a)->max == 1)
-			ps_rotate(column_a, 'a');
+
+	aux = *column_b;
+/*	while (aux)
+    {
+		if (aux->max == 1)
+			ft_printf("The maximum is %i\n", aux->num);
+		else if (aux->min == 1)
+			ft_printf("The minimum is %i\n", aux->num);
+		aux = aux->next;
+	}
+*/
+/*	if (ps_order(*column_a) == 1)
+		return ;*/
+
+/*	if (ps_order(*column_a) != 1)
+	{*/
+//	if ((*column_a)->min == 1)
+//		ps_push(column_a, column_b, 'b');
+	if ((*column_a)->max == 1)
+		ps_rotate(column_a, 'a');	
+//	else if ((*column_a)->min == 1)
+//		ps_push(column_a, column_b, 'b');
 //		ft_printf("num-> %i\n", (*column_a)->num);
 //		ft_printf("aux-> %i\n", ((*column_a)->next)->num);
-		else if((*column_a)->num > ((*column_a)->next)->num)
-			ps_swap(column_a, 'a');
+	else if((*column_a)->num > ((*column_a)->next)->num)
+		ps_swap(column_a, 'a');
+	else
 		ps_rotate(column_a, 'a');
-	}
 }

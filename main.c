@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/20 12:22:58 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/22 11:59:22 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int main(int argc, char **argv)
 	i = 0;
 	column_a = malloc(sizeof(t_list));
 	column_b = malloc(sizeof(t_list));
-	printf("A-> %p\n", column_a);
-	printf("B-> %p\n", column_b);
+//	printf("A-> %p\n", column_a);
+//	printf("B-> %p\n", column_b);
 
 	column_a = 0;
 	column_b = 0;
@@ -60,14 +60,34 @@ int main(int argc, char **argv)
 		i = 0;
 	}
 	if (ps_repeat(column_a) == 1)
+	{
 		ps_error(1);
+		return (0);
+	}
 /*	else
 		ps_print_column(column_a, column_b);
 */
-//	ps_step_one(column_a, column_b);
+	ps_step_one(column_a, column_b);
+//	ps_step_one(&column_a, &column_b);
 
 //	ps_insertion_one(column_a, column_b);
-	while (ps_order(column_a) != 1)
+
+/*	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+	ps_par(&column_a, &column_b);
+*/
+/*	while (ps_order(column_a) != 1)
 	{	
 		ps_par(&column_a, &column_b);
 	}
@@ -75,17 +95,15 @@ int main(int argc, char **argv)
 	{
 		ps_push(&column_b, &column_a, 'a');
 	}
-/*	ps_par(&column_a);
-	ps_print_column(column_a, column_b);
-	ps_par(&column_a);
+*/
 
-	ps_free(&column_a);
+/*	ps_free(&column_a);
 	free(column_a);
 	ps_free(&column_b);
 	free(column_b);
 */
 //	ps_step_three(column_a, column_b);
-	ps_print_column(column_a, column_b);
+//	ps_print_column(column_a, column_b);
 
 /*	if (ps_order(column_a) == 1)
 		ft_printf("The column is neat!\n");
