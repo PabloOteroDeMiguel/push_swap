@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/22 11:59:22 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:22:35 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ int main(int argc, char **argv)
 	ps_free(&column_b);
 	free(column_b);
 */
-//	ps_step_three(column_a, column_b);
 //	ps_print_column(column_a, column_b);
 
 /*	if (ps_order(column_a) == 1)
