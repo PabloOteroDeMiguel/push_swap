@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/22 12:22:35 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:46:53 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,12 @@ int main(int argc, char **argv)
 		ps_error(1);
 		return (0);
 	}
-/*	else
+	else
 		ps_print_column(column_a, column_b);
-*/
-	ps_step_one(column_a, column_b);
-//	ps_step_one(&column_a, &column_b);
 
-//	ps_insertion_one(column_a, column_b);
+//	ps_step_one(column_a, column_b);
+//	ps_step_one(&column_a, &column_b);
+	ps_parts(column_a, column_b);
 
 /*	ps_par(&column_a, &column_b);
 	ps_par(&column_a, &column_b);
@@ -96,7 +95,6 @@ int main(int argc, char **argv)
 		ps_push(&column_b, &column_a, 'a');
 	}
 */
-
 /*	ps_free(&column_a);
 	free(column_a);
 	ps_free(&column_b);
@@ -104,13 +102,16 @@ int main(int argc, char **argv)
 */
 //	ps_print_column(column_a, column_b);
 
+
 /*	if (ps_order(column_a) == 1)
 		ft_printf("The column is neat!\n");
 	else
 		ft_printf("The column is NOT neat!\n");
-	ps_limits(column_a);
 */
-/*	aux = column_a;
+/*	ps_limits(column_a);
+	ps_position(column_a);
+	ps_nmin(column_a, 5);
+	aux = column_a;
 	while (aux)
 	{
 		if (aux->max == 1)
@@ -119,6 +120,7 @@ int main(int argc, char **argv)
 			ft_printf("The minimum is %i\n", aux->num);
 		aux = aux->next;
 	}
+	ft_printf("closer-> %i\n", ps_closer(column_a, 5));
 */
 /*	ps_swap(&column_a, 'a');
 	ps_print_column(column_a, column_b);

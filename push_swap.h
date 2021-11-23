@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/20 12:20:14 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/23 13:15:53 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ void		ps_step_one(t_column *column_a, t_column *column_b);
 void		ps_step_two(t_column *column);
 void		ps_step_three(t_column *column_a, t_column *column_b);
 void		ps_free(t_column **column);
-void		ps_insertion_one(t_column *column_a, t_column *column_b);
 void		ps_par(t_column **column_a, t_column **column_b);
+void		ps_nmin(t_column *column, int n);
+int			ps_closer(t_column *column, int n);
+void		ps_parts(t_column *column_a, t_column *column_b);
 
 #endif
