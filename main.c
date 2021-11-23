@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/23 13:46:53 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:50:41 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int main(int argc, char **argv)
 {	
 	char		**str;
 	int			i;
+	int			j;
 	int			a;
+	int			numbers;
 	long int	num;
 	t_column	*column_a;
 	t_column	*column_b;
@@ -69,7 +71,16 @@ int main(int argc, char **argv)
 
 //	ps_step_one(column_a, column_b);
 //	ps_step_one(&column_a, &column_b);
-	ps_parts(column_a, column_b);
+	
+	numbers = ((ps_lstsize(column_a) - 5) / 5);
+	j = 0;
+	while (j < 4)
+	{
+		ps_parts(column_a, column_b, numbers);
+		j++;
+	}
+
+//	ps_parts(column_a, column_b, numbers);
 
 /*	ps_par(&column_a, &column_b);
 	ps_par(&column_a, &column_b);
