@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:00:01 by potero            #+#    #+#             */
-/*   Updated: 2021/11/23 13:46:56 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:49:07 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ps_step_one(t_column *column_a, t_column *column_b)
 		aux2 = column_b;
 		ps_position(column_a);
 //		ps_nmin(column_a, ((numbers - 5) / 5));
-		ps_limits(column_a);
+		ps_limit_min(column_a);
 //		ft_printf("numeros-->%i\n", numbers);
 //		ft_printf("pos %i\n", column_a->pos);
 		while (aux->min != 1)

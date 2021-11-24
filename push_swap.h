@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/23 16:50:43 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:21:11 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void		ps_rr(t_column **column_1, t_column **column_2);
 void		ps_reverse_r(t_column **column, char c);
 void		ps_rrr(t_column **column_1, t_column **column_2);
 int			ps_order(t_column *column);
-void		ps_limits(t_column *column);
+void		ps_limit_min(t_column *column);
+void		ps_limit_max(t_column *column);
 void		ps_position(t_column *column);
 void		ps_step_one(t_column *column_a, t_column *column_b);
 void		ps_step_two(t_column *column);
@@ -57,6 +58,7 @@ void		ps_free(t_column **column);
 void		ps_par(t_column **column_a, t_column **column_b);
 void		ps_nmin(t_column *column, int n);
 int			ps_closer(t_column *column, int n);
-void		ps_parts(t_column *column_a, t_column *column_b, int numbers);
+void		ps_parts(t_column **column_a, t_column **column_b, int numbers);
+void		ps_parts_two(t_column **column_a, t_column **column_b);
 
 #endif

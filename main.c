@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/23 16:50:41 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:49:05 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,29 @@ int main(int argc, char **argv)
 		ps_error(1);
 		return (0);
 	}
-	else
-		ps_print_column(column_a, column_b);
+//	else
+//		ps_print_column(column_a, column_b);
 
 //	ps_step_one(column_a, column_b);
 //	ps_step_one(&column_a, &column_b);
 	
 	numbers = ((ps_lstsize(column_a) - 5) / 5);
 	j = 0;
-	while (j < 4)
+	while (j < 5)
 	{
-		ps_parts(column_a, column_b, numbers);
+		if (ps_order(column_a) != 1)
+			ps_parts(&column_a, &column_b, numbers);
 		j++;
 	}
+	while (ps_order(column_a) != 1)
+		ps_par(&column_a, &column_b);
+	while (column_b)
+		ps_parts_two(&column_a, &column_b);
 
-//	ps_parts(column_a, column_b, numbers);
+	if (ps_order(column_a) == 1)
+		ps_print_column(column_a, column_b);
+	else
+		ft_printf("NO no NooooOooo");
 
 /*	ps_par(&column_a, &column_b);
 	ps_par(&column_a, &column_b);
