@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:59:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/24 13:49:05 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:41:15 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(int argc, char **argv)
 	int			i;
 	int			j;
 	int			a;
+	int			d;
 	int			numbers;
 	long int	num;
 	t_column	*column_a;
@@ -72,9 +73,11 @@ int main(int argc, char **argv)
 //	ps_step_one(column_a, column_b);
 //	ps_step_one(&column_a, &column_b);
 	
-	numbers = ((ps_lstsize(column_a) - 5) / 5);
+	d = ((ps_lstsize(column_a) / 50) + 3);
+//	ft_printf("d-> %i\n", d);
+	numbers = ((ps_lstsize(column_a) - 5) / d);
 	j = 0;
-	while (j < 5)
+	while (j < d)
 	{
 		if (ps_order(column_a) != 1)
 			ps_parts(&column_a, &column_b, numbers);
@@ -85,11 +88,11 @@ int main(int argc, char **argv)
 	while (column_b)
 		ps_parts_two(&column_a, &column_b);
 
-	if (ps_order(column_a) == 1)
+/*	if (ps_order(column_a) == 1)
 		ps_print_column(column_a, column_b);
 	else
 		ft_printf("NO no NooooOooo");
-
+*/
 /*	ps_par(&column_a, &column_b);
 	ps_par(&column_a, &column_b);
 	ps_par(&column_a, &column_b);

@@ -6,7 +6,7 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:59:29 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/18 12:32:17 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/25 11:41:43 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ps_reverse_r(t_column **column, char c)
 	else if (ps_lstsize(*column) == 2)
 		ps_swap(&*column, 'r');
 	if (c == 'a' || c == 'b')
-		ft_printf("rr%a\n", c);
+		ft_printf("rr%c\n", c);
 }
 
 void	ps_rrr(t_column **column_1, t_column **column_2)
