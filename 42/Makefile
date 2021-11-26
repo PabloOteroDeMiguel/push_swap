@@ -6,7 +6,7 @@
 #    By: potero <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/11 15:42:33 by potero            #+#    #+#              #
-#    Updated: 2021/11/25 13:47:05 by potero-d         ###   ########.fr        #
+#    Updated: 2021/11/26 09:41:42 by potero-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ SRCS = push_swap.c ps_lst.c ps_error.c ps_check_arg.c \
 	   ps_repeat.c ps_atoi.c ps_create_column.c \
 	   ps_swap.c ps_push.c ps_rotate.c ps_order.c \
 	   ps_limits.c ps_position.c \
-	   ps_free.c ps_par.c ps_closer.c ps_algorithm.c
+	   ps_free.c ps_par.c ps_closer.c ps_algorithm.c \
+	   ps_print_column.c
 
 LIBFT_PATH = libft/
 FT_PRINTF_PATH = ft_printf/

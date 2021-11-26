@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/25 13:49:40 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:45:26 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		ps_lst_add_back(t_column **column, t_column *new);
 void		ps_error(int a);
 int			ps_check_arg(char *str);
 void		ps_print_column(t_column *column_a, t_column *column_b);
-int			ps_repeat(t_column **column);
+int			ps_repeat(t_column *column);
 long int	ps_atoi(const char *str);
 void		ps_add_front(t_column **column, t_column *new);
 void		ps_del_one(t_column *column, void (*del)(void*));
@@ -61,6 +61,6 @@ void		ps_parts(t_column **column_a, t_column **column_b, int numbers);
 void		ps_parts_two(t_column **column_a, t_column **column_b);
 void		ps_move_a(t_column **column_a, int r);
 void		ps_move_b(t_column **column_b, t_column *aux, int n);
-void		ps_create_column(t_column **column_a, int argc,char ** argv);
+int			ps_create_column(t_column **column, int argc,char ** argv);
 
 #endif

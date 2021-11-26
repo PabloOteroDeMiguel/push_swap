@@ -6,17 +6,17 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:24:35 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/25 13:48:15 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:54:20 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_create_column(t_column **column, int	argc, char **argv)
+int	ps_create_column(t_column **column, int	argc, char **argv)
 {
-	char	**str;
-	int		a;
-	int		i;
+	char		**str;
+	int			a;
+	int			i;
 
 	a = 1;
 	i = 0;
@@ -30,12 +30,14 @@ void	ps_create_column(t_column **column, int	argc, char **argv)
 			else
 			{
 				ps_error(1);
-				return ;
+				return (0);
 			}
 			i++;
 			free(str[i - 1]);
 		}
 		free(str);
 		a++;
+		i = 0;
 	}
+	return (1);
 }
