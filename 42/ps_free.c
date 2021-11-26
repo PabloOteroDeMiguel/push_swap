@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 10:25:33 by potero            #+#    #+#             */
-/*   Updated: 2021/11/19 11:11:58 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/26 12:33:24 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ps_free(t_column **column)
 {
 	t_column	*aux;
-;
+
 	while (*column)
 	{
 		aux = (*column)->next;
@@ -23,5 +23,5 @@ void	ps_free(t_column **column)
 		*column = aux;
 	}
 	*column = NULL;
-	//free(*column);
+	free(*column);
 }

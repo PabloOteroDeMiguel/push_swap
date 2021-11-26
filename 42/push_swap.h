@@ -6,13 +6,12 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:34:31 by potero            #+#    #+#             */
-/*   Updated: 2021/11/26 10:45:26 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:38:08 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# define ABS(Value) (Value >= 0) ? Value : Value * - 1
 
 # include<unistd.h>
 # include<stdlib.h>
@@ -61,6 +60,6 @@ void		ps_parts(t_column **column_a, t_column **column_b, int numbers);
 void		ps_parts_two(t_column **column_a, t_column **column_b);
 void		ps_move_a(t_column **column_a, int r);
 void		ps_move_b(t_column **column_b, t_column *aux, int n);
-int			ps_create_column(t_column **column, int argc,char ** argv);
+int			ps_create_c(t_column **column, int argc, char **argv);
 
 #endif

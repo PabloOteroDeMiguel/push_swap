@@ -6,7 +6,7 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 09:49:55 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/24 12:57:20 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:30:31 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,25 @@ void	ps_limit_max(t_column *column)
 	}
 }
 
+void	ps_nmin_aux(t_column *column, long int min)
+{
+	t_column	*aux;
+
+	aux = column;
+	while (aux)
+	{
+		if (aux->num == min)
+			aux->min = 1;
+		aux = aux->next;
+	}
+}
+
 void	ps_nmin(t_column *column, int n)
 {
 	t_column	*aux;
 	long int	min;
 	int			i;
-	
+
 	ps_limit_min(column);
 	i = 0;
 	while (i < n - 1)
@@ -74,9 +87,7 @@ void	ps_nmin(t_column *column, int n)
 		if (aux->min == 1)
 		{
 			while (aux->min == 1)
-			{
 				aux = aux->next;
-			}
 		}
 		min = aux->num;
 		aux = aux->next;
@@ -86,14 +97,7 @@ void	ps_nmin(t_column *column, int n)
 				min = aux->num;
 			aux = aux->next;
 		}
-		aux = column;
-		while (aux)
-		{
-			if (aux->num == min)
-				aux->min = 1;
-			aux = aux->next;
-		}
+		ps_nmin_aux(column, min);
 		i++;
 	}
 }
-

@@ -6,7 +6,7 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:09:46 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/26 10:54:17 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:43:28 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ps_step_one(t_column **column_a, t_column **column_b)
 	}
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_column	*column_a;
@@ -39,9 +38,7 @@ int	main(int argc, char **argv)
 	column_b = malloc(sizeof(t_column));
 	column_a = 0;
 	column_b = 0;
-	
-	ps_create_column(&column_a, argc, argv);
-	if (ps_repeat(column_a) == 1)
+	if (ps_create_c(&column_a, argc, argv) == 0 || ps_repeat(column_a) == 1)
 	{
 		ps_error(1);
 		return (0);
@@ -52,4 +49,7 @@ int	main(int argc, char **argv)
 		ps_par(&column_a, &column_b);
 	while (column_b)
 		ps_parts_two(&column_a, &column_b);
+	ps_free(&column_a);
+	ps_free(&column_b);
+//	system("leaks push_swap");
 }
