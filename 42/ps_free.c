@@ -6,12 +6,11 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 10:25:33 by potero            #+#    #+#             */
-/*   Updated: 2021/11/27 14:21:19 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/29 11:38:40 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include<stdio.h>
 
 void	ps_free(t_column **column)
 {
@@ -20,11 +19,8 @@ void	ps_free(t_column **column)
 	aux = *column;
 	while (*column)
 	{
-//		free(*column);
 		aux = (*column)->next;
-		printf("auxD1-> %p\n", aux);
 		free(*column);
-		printf("auxD2-> %p\n", aux);
 		*column = aux;
 	}
 	free(*column);

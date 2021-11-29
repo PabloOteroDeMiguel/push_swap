@@ -6,7 +6,7 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:59:29 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/25 11:41:43 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/29 11:36:19 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ps_rotate(t_column **column, char c)
 	aux = *column;
 	*column = (*column)->next;
 	ps_lst_add_back(column, ps_lstnew(aux->num));
+	free(aux);
 	if (c == 'a' || c == 'b')
 		ft_printf("r%c\n", c);
 }
@@ -37,16 +38,12 @@ void	ps_reverse_r(t_column **column, char c)
 
 	if (ps_lstsize(*column) > 2)
 	{
-		aux = *column;
-		ps_add_front(column, ps_lstnew(ps_lstlast(aux)->num));
-		aux = *column;
-		aux2 = aux->next;
-		while (aux2->next != 0)
-		{
+		aux = ps_lstlast(*column);
+		aux2 = *column;
+		while (aux2->next && aux2->next->next)
 			aux2 = aux2->next;
-			aux = aux->next;
-		}
-		aux->next = NULL;
+		aux2->next = 0;
+		ps_add_front(column, aux);
 	}
 	else if (ps_lstsize(*column) == 2)
 		ps_swap(&*column, 'r');

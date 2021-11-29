@@ -6,7 +6,7 @@
 /*   By: potero <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:31:47 by potero            #+#    #+#             */
-/*   Updated: 2021/11/27 14:25:07 by potero           ###   ########.fr       */
+/*   Updated: 2021/11/29 11:36:42 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ t_column	*ps_lstnew(long int num)
 {
 	t_column	*element;
 
-//	element = malloc(sizeof(t_column));
-//	if (!element)
-//		return (NULL);
+	element = malloc(sizeof(t_column));
+	if (!element)
+		return (NULL);
 	element->num = num;
 	element->next = NULL;
 	return (element);
