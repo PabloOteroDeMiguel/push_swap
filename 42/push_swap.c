@@ -6,7 +6,7 @@
 /*   By: potero-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:09:46 by potero-d          #+#    #+#             */
-/*   Updated: 2021/11/29 12:02:50 by potero-d         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:09:55 by potero-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,20 @@ int	main(int argc, char **argv)
 	t_column	*column_a;
 	t_column	*column_b;
 
-	if (ps_create_c(&column_a, argc, argv) == 0 || ps_repeat(column_a) == 1)
+	if (argc > 1)
 	{
-		ps_error(1);
-		return (0);
+		if (ps_create_c(&column_a, argc, argv) == 0 || ps_repeat(column_a) == 1)
+		{
+			ps_error(1);
+			return (0);
+		}
+		if (ps_lstsize(column_a) > 5)
+			ps_step_one(&column_a, &column_b);
+		while (ps_order(column_a) != 1)
+			ps_par(&column_a, &column_b);
+		while (column_b)
+			ps_parts_two(&column_a, &column_b);
+		ps_free(&column_a);
+		ps_free(&column_b);
 	}
-	if (ps_lstsize(column_a) > 5)
-		ps_step_one(&column_a, &column_b);
-	while (ps_order(column_a) != 1)
-		ps_par(&column_a, &column_b);
-	while (column_b)
-		ps_parts_two(&column_a, &column_b);
-	ps_free(&column_a);
-	ps_free(&column_b);
 }
